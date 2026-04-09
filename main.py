@@ -170,8 +170,9 @@ async def main() -> None:
     config = load_config("config.yaml")
     prompts = load_prompts("prompts/")
 
-    # Ensure data and tools_generated directories exist
+    # Ensure data, tools_generated, and workspace directories exist
     Path("data").mkdir(exist_ok=True)
+    Path("workspace").mkdir(exist_ok=True)
     tools_dir = Path(config.get("tools", {}).get("generated_dir", "tools_generated"))
     tools_dir.mkdir(exist_ok=True)
 

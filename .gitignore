@@ -1,5 +1,6 @@
 data/
-tools_generated/*.py
+tools_generated/
+tests/
 __pycache__/
 .venv/
 *.pyc
