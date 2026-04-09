@@ -1,0 +1,32 @@
+model:
+  provider: anthropic    # anthropic | openai | ollama | vllm | openai_compat
+  name: claude-sonnet-4-20250514
+  api_base: null         # for local providers
+  api_key_env: ANTHROPIC_API_KEY
+
+planner_model:           # optional override for planning calls
+  provider: anthropic
+  name: claude-sonnet-4-20250514
+
+embedding:
+  model: BAAI/bge-small-en-v1.5
+  dim: 384
+
+limits:
+  max_iterations: 30
+  max_tokens_per_call: 4096
+  context_budget: 100000
+  iteration_warning_at: 0.7
+
+memory:
+  db_path: data/bau.db
+  retrieval_k: 5
+
+tools:
+  generated_dir: tools_generated
+  require_approval: true
+  hard_cap: 100
+
+ui:
+  theme: dark
+  show_token_usage: true
